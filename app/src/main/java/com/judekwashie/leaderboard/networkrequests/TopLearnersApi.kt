@@ -1,6 +1,6 @@
-package com.judekwashie.leaderboard.api
+package com.judekwashie.leaderboard.networkrequests
 
-import com.judekwashie.leaderboard.TopLearners
+import com.judekwashie.leaderboard.models.TopLearners
 import retrofit2.Call
 import retrofit2.http.GET
 

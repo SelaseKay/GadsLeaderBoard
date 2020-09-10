@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.judekwashie.leaderboard.api.SubmitApi
+import com.judekwashie.leaderboard.networkrequests.SubmitApi
 import kotlinx.android.synthetic.main.activity_submit.*
 import kotlinx.android.synthetic.main.custom_dialog_submit.view.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -21,7 +21,6 @@ class SubmitActivity : AppCompatActivity() {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_submit)
-
 
         back_arrow.setOnClickListener {
             onBackPressed()
@@ -51,33 +50,33 @@ class SubmitActivity : AppCompatActivity() {
     }
 
     private fun postToApi(submitDialog: AlertDialog) {
-        val firstName = firstNameEditText.text.toString()
-        val lastName = lastNameEditText.text.toString()
-        val email = emailEditText.text.toString()
-        val linkToProject = projectLinkEditText.text.toString()
-        val retrofit = RetrofitHelper.getInstance()
+        val firstName = firstNameEditText.text.toString().trim()
+        val lastName = lastNameEditText.text.toString().trim()
+        val email = emailEditText.text.toString().trim()
+        val linkToProject = projectLinkEditText.text.toString().trim()
+        val retrofit = RetrofitHelper.getInstanceForPostRequest()
         retrofit.create(SubmitApi::class.java)
             .submitWork(email, firstName, lastName, linkToProject)
-            .enqueue(object : Callback<ProjectDetails> {
-                override fun onFailure(call: Call<ProjectDetails>, t: Throwable) {
+            .enqueue(object : Callback<Void> {
+                override fun onFailure(call: Call<Void>, t: Throwable) {
                     AlertDialog.Builder(this@SubmitActivity, R.style.DialogStyle)
                         .setView(R.layout.dialog_unsuccessful).show()
                     Toast.makeText(
                         this@SubmitActivity,
-                        "something went wrong ${t.message}",
+                        "something went wrong",
                         Toast.LENGTH_LONG
                     ).show()
                     submitDialog.dismiss()
                 }
 
                 override fun onResponse(
-                    call: Call<ProjectDetails>,
-                    response: Response<ProjectDetails>
+                    call: Call<Void>,
+                    response: Response<Void>
                 ) {
                     if (!response.isSuccessful) {
                         Toast.makeText(
                             this@SubmitActivity,
-                            "something went wrong${response.code()}",
+                            "something went wrong",
                             Toast.LENGTH_LONG
                         ).show()
                         return
@@ -85,7 +84,6 @@ class SubmitActivity : AppCompatActivity() {
                     AlertDialog.Builder(this@SubmitActivity, R.style.DialogStyle)
                         .setView(R.layout.dialog_successful).show()
                     submitDialog.dismiss()
-
                 }
             })
     }
