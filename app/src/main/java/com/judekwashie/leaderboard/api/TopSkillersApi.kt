@@ -1,6 +1,6 @@
 package com.judekwashie.leaderboard.api
 
-import com.judekwashie.leaderboard.TopSkillers
+import com.judekwashie.leaderboard.models.TopSkillers
 import retrofit2.Call
 import retrofit2.http.GET
 

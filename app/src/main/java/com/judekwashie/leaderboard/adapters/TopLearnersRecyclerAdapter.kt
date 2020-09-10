@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.judekwashie.leaderboard.R
-import com.judekwashie.leaderboard.TopLearners
+import com.judekwashie.leaderboard.models.TopLearners
 
 class TopLearnersRecyclerAdapter(context: Context, private val topLearners: ArrayList<TopLearners>) :
     RecyclerView.Adapter<TopLearnersRecyclerAdapter.TopLearnerViewHolder>() {

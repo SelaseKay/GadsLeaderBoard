@@ -21,8 +21,6 @@ class LearnersListActivity : AppCompatActivity() {
 
         window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
 
-
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

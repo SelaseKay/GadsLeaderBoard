@@ -7,12 +7,14 @@ import androidx.lifecycle.MutableLiveData
 import com.judekwashie.leaderboard.*
 import com.judekwashie.leaderboard.api.TopLearnersApi
 import com.judekwashie.leaderboard.api.TopSkillersApi
+import com.judekwashie.leaderboard.models.TopLearners
+import com.judekwashie.leaderboard.models.TopSkillers
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class LearnersRepository(val context: Context) {
-    private val retrofit = RetrofitHelper.getInstance()
+    private val retrofit = RetrofitHelper.getInstanceForGetRequest()
     var topSkllers: MutableLiveData<ArrayList<TopSkillers>> =
         MutableLiveData()
     var topLearners: MutableLiveData<ArrayList<TopLearners>> =
