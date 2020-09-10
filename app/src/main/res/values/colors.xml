@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="dark">#000000</color>
+    <color name="dark_shadow">#0E0E0E</color>
+
+    <item name="orange" type="color">#ED9F3E</item>
+    <item name="medium_dark" type="color">#252525</item>
+    <item name="light_dark" type="color">#7C7C7C</item>
+    <item name="dialog_close_color" type="color">#757575</item>
+    <item name="dialog_yes_button" type="color">#F4B463</item>
+    <item name="underline_color" type="color">#F4C07E</item>
+</resources>
