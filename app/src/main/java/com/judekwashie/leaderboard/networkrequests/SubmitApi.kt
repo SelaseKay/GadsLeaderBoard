@@ -1,4 +1,4 @@
-package com.judekwashie.leaderboard.api
+package com.judekwashie.leaderboard.networkrequests
 
 import retrofit2.Call
 import retrofit2.http.Field

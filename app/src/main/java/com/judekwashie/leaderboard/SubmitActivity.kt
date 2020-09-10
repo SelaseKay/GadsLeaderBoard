@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.judekwashie.leaderboard.api.SubmitApi
+import com.judekwashie.leaderboard.networkrequests.SubmitApi
 import kotlinx.android.synthetic.main.activity_submit.*
 import kotlinx.android.synthetic.main.custom_dialog_submit.view.*
 import kotlinx.android.synthetic.main.toolbar.*

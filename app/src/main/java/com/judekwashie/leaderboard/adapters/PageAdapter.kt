@@ -3,8 +3,8 @@ package com.judekwashie.leaderboard.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.judekwashie.leaderboard.LearnersListFragment
-import com.judekwashie.leaderboard.SkillIQListFragment
+import com.judekwashie.leaderboard.fragments.LearnersListFragment
+import com.judekwashie.leaderboard.fragments.SkillIQListFragment
 
 class PageAdapter(fragmentManager: FragmentManager, private val numOfTabs: Int) :
     FragmentStatePagerAdapter(fragmentManager, numOfTabs) {

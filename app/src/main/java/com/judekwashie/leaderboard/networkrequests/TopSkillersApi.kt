@@ -1,4 +1,4 @@
-package com.judekwashie.leaderboard.api
+package com.judekwashie.leaderboard.networkrequests
 
 import com.judekwashie.leaderboard.models.TopSkillers
 import retrofit2.Call
